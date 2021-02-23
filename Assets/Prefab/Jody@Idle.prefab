@@ -162,6 +162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89b3cd85f8ac1f6488bd877c43662427, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 427
+  startFrame: 203
+  lifeTime: 10
+  speed: 0
+  turnSpeed: 10
+  active: 0
   moveIndex: 0
   moveDestinations:
   - {x: 129.7, y: -0.5, z: 69}
@@ -2230,12 +2236,7 @@ MonoBehaviour:
   - {x: 62.4, y: -0.5, z: 43.766975}
   - {x: 62.21486, y: -0.5, z: 43.614616}
   distance: 0
-  speed: 0
   originalPosition: {x: 115.799995, y: -0.5, z: 71.5}
-  ID: 427
-  startFrame: 203
-  lifeTime: 10
-  active: 0
 --- !u!1 &802970446779029166
 GameObject:
   m_ObjectHideFlags: 0
