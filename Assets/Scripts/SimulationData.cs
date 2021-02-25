@@ -18,7 +18,7 @@ public class SimulationData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fileName = "hall.txt";
+        fileName = "street.txt";
         filePath = Application.dataPath + "/" + fileName;
         ReadFromFile();
         SpawnAgents();
@@ -38,8 +38,9 @@ public class SimulationData : MonoBehaviour
 
         foreach (string line in positionList)
         {
+            string[] data = line.Split(' ');
 
-            if (line == "2065")
+            if (data.Length == 1)
             {
                 prefab[i].GetComponent<AgentMoveWithAnimation>().moveDestinations = positionListForOneAgent;
                 prefab[i].GetComponent<AgentMoveWithAnimation>().originalPosition = positionListForOneAgent[0];
@@ -47,14 +48,14 @@ public class SimulationData : MonoBehaviour
                 GameObject obj = Instantiate(prefab[i]);
                 obj.SetActive(false);
                 objectPool.Add(obj);
-               
+                
                 positionListForOneAgent.Clear();
                 i++;
                 if (i > 5) i = 0;
                           
             }
 
-            if (line != "2065")
+            if (data.Length > 1)
             {                
                 string[] pos = line.Split(' ');
                 if (pos.Length >= 2)
